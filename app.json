@@ -1,19 +1,21 @@
 {
     "runtime": {
         "arguments": "--v=1 --inspect",
-        "version": "alpha"
+        "version": "stable"
     },
     "shortcut": {
         "company": "OpenFin",
         "description": "Platform app seed local",
         "icon": "https://openfin.github.io/golden-prototype/favicon.ico",
-        "name": "Platform app seed local"
+        "name": "Platform app seed local",
+        "uninstall-shortcut": true
     },
     "platform": {
         "uuid": "platform_customization_local",
         "applicationIcon": "https://openfin.github.io/golden-prototype/favicon.ico",
         "autoShow": false,
         "providerUrl": "http://localhost:5555/provider.html",
+      
         "permissions": {
             "ExternalWindow": {
               	"wrap": true
@@ -25,6 +27,8 @@
                 "terminateExternalProcess": true
             }
         },
+        
+        
         "defaultWindowOptions": {
             "url": "http://localhost:5555/platform-window.html",
             "contextMenu": true,
@@ -38,13 +42,90 @@
             "minWidth": 354,
             "experimental": {
                 "analytics": true
+            },
+      "ContentCreationRule": {
+          "behavior": "window"
+      },
+        "permissions": {
+            "ExternalWindow": {
+              	"wrap": true
+            },
+            "System": {
+                "getAllExternalWindows": true,
+                "launchExternalProcess": true,
+                "readRegistryValue": false,
+                "terminateExternalProcess": true
             }
+        }
         },
         "defaultViewOptions": {
-            "experimental": {
-                "childWindows": true,
-                "analytics": true
+             "experimental": {
+                "contentCreation": {
+                    "rules": [
+                        {
+                            "behavior": "view",
+                            "match": [
+                                "*://*.stackoverflow.com/*"
+                            ],
+                            "options": {
+                                "frame": false,
+                                "alwaysOnTop": true,
+                                "defaultWidth": 800,
+                                "defaultHeight": 600
+                            }
+                        },
+                        {
+                            "behavior": "browser",
+                            "match": [
+                                "*://*.gitlab.com/*"
+                            ]
+                        },
+                        {
+                            "behavior": "view",
+                            "match": [
+                                "<all_urls>"
+                            ],
+                            "options": {
+                                "title": "...loading"
+                            }
+                        },
+                        {
+                            "behavior": "block",
+                            "match": [
+                                "*://*.reddit.com/*"
+                            ]
+                        },
+                        {
+                            "behavior": "window",
+                            "match": [
+                                "*://*/*?window=true"
+                            ]
+                        },
+                        {
+                            "behavior": "view",
+                            "match": [
+                                "<all_urls>"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "accelerator": {
+                "zoom": true
+                },
+      
+            "permissions": {
+                "ExternalWindow": {
+                      "wrap": true
+                },
+                "System": {
+                    "getAllExternalWindows": true,
+                    "launchExternalProcess": true,
+                    "readRegistryValue": false,
+                    "terminateExternalProcess": true
+                }
             }
+           
         },
         "commands": [
             {
@@ -55,8 +136,11 @@
     },
     "snapshot": {
         "windows": [
-            {
+            { 
                 "layout": {
+                    "settings": {
+                        "hasHeaders": false
+                    }, 
                     "content": [
                         {
                             "type": "stack",
@@ -67,7 +151,7 @@
                                     "componentName": "view",
                                     "componentState": {
                                         "processAffinity": "ps_1",
-                                        "url": "https://cdn.openfin.co/embed-web/chart.html"
+                                        "url": "https://google.com"
                                     }
                                 }
                             ]

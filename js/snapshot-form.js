@@ -12,20 +12,20 @@ class SnapshotForm extends LayoutForm {
     saveAsTemplate = async () => {
         const name = this.querySelector('.template-name').value;
         const close = this.querySelector('#close').checked;
-
+        
         console.log(name, close);
         const templateObject = {
             name,
             snapshot: await fin.Platform.getCurrentSync().getSnapshot(),
             close
         };
-
+        console.dir({ msg: "Snapshot Options object", templateObject}, {depth: null, colors: true});
         storeTemplate(this.templateStorageKey, templateObject);
 
         this.toggleVisibility();
         return;
     }
-
+   
     render = async () => {
         const snapshotMenu = html`
             <div class="center-form">

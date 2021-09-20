@@ -8,33 +8,33 @@ const externalWindowsToTrack = [
         title: 'my_platform_notes - Notepad'
     }
 ];
+fin.Platform.init()
+// fin.Platform.init({
+//     overrideCallback: async (Provider) => {
+//         class Override extends Provider {
+//             async getSnapshot() {
+//                 const snapshot = await super.getSnapshot();
 
-fin.Platform.init({
-    overrideCallback: async (Provider) => {
-        class Override extends Provider {
-            async getSnapshot() {
-                const snapshot = await super.getSnapshot();
+//                 //we add an externalWindows section to our snapshot
+//                 const externalWindows = await generateExternalWindowSnapshot(externalWindowsToTrack);
+//                 return {
+//                     ...snapshot,
+//                     externalWindows
+//                 };
+//             }
 
-                //we add an externalWindows section to our snapshot
-                const externalWindows = await generateExternalWindowSnapshot(externalWindowsToTrack);
-                return {
-                    ...snapshot,
-                    externalWindows
-                };
-            }
+//             async applySnapshot({ snapshot, options }) {
 
-            async applySnapshot({ snapshot, options }) {
+//                 const originalPromise = super.applySnapshot({ snapshot, options });
 
-                const originalPromise = super.applySnapshot({ snapshot, options });
+//                 //if we have a section with external windows we will use it.
+//                 if (snapshot.externalWindows) {
+//                     await Promise.all(snapshot.externalWindows.map(async (i) => await restoreExternalWindowPositionAndState(i)));
+//                 }
 
-                //if we have a section with external windows we will use it.
-                if (snapshot.externalWindows) {
-                    await Promise.all(snapshot.externalWindows.map(async (i) => await restoreExternalWindowPositionAndState(i)));
-                }
-
-                return originalPromise;
-            }
-        };
-        return new Override();
-    }
-});
+//                 return originalPromise;
+//             }
+//         };
+//         return new Override();
+//     }
+// });

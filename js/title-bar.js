@@ -61,6 +61,8 @@ class TitleBar extends HTMLElement {
     toggleLockedLayout = async () => {
         const oldLayout = await fin.Platform.Layout.getCurrentSync().getConfig();
         const { settings, dimensions } = oldLayout;
+        console.dir({ msg: "LayoutSettings object", settings}, {depth: null, colors: true});
+
         if(settings.hasHeaders && settings.reorderEnabled) {
             fin.Platform.Layout.getCurrentSync().replace({
                 ...oldLayout,
