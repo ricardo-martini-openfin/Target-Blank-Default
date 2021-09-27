@@ -16,7 +16,7 @@
         "providerUrl": "https://ricardo-martini-openfin.github.io/Target-Blank-Default/provider.html",
         "permissions": {
             "ExternalWindow": {
-              	"wrap": true
+                "wrap": true
             },
             "System": {
                 "getAllExternalWindows": true,
@@ -40,8 +40,8 @@
         "defaultViewOptions": {
             "accelerator": {
                 "zoom": true
-                }
-            },
+            }
+        },
         "commands": [
             {
                 "command": "stack.nextTab",
