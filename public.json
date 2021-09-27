@@ -37,6 +37,11 @@
             "minHeight": 445,
             "minWidth": 308
         },
+        "defaultViewOptions": {
+            "accelerator": {
+                "zoom": true
+                }
+            },
         "commands": [
             {
                 "command": "stack.nextTab",
