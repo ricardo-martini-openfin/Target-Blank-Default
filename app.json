@@ -1,7 +1,7 @@
 {
     "runtime": {
         "arguments": "--v=1 --inspect",
-        "version": "stable"
+        "version": "17.85.54.32"
     },
     "shortcut": {
         "company": "OpenFin",
@@ -59,57 +59,6 @@
         }
         },
         "defaultViewOptions": {
-             "experimental": {
-                "contentCreation": {
-                    "rules": [
-                        {
-                            "behavior": "view",
-                            "match": [
-                                "*://*.stackoverflow.com/*"
-                            ],
-                            "options": {
-                                "frame": false,
-                                "alwaysOnTop": true,
-                                "defaultWidth": 800,
-                                "defaultHeight": 600
-                            }
-                        },
-                        {
-                            "behavior": "browser",
-                            "match": [
-                                "*://*.gitlab.com/*"
-                            ]
-                        },
-                        {
-                            "behavior": "view",
-                            "match": [
-                                "<all_urls>"
-                            ],
-                            "options": {
-                                "title": "...loading"
-                            }
-                        },
-                        {
-                            "behavior": "block",
-                            "match": [
-                                "*://*.reddit.com/*"
-                            ]
-                        },
-                        {
-                            "behavior": "window",
-                            "match": [
-                                "*://*/*?window=true"
-                            ]
-                        },
-                        {
-                            "behavior": "view",
-                            "match": [
-                                "<all_urls>"
-                            ]
-                        }
-                    ]
-                }
-            },
             "accelerator": {
                 "zoom": true
                 },

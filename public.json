@@ -13,7 +13,7 @@
         "uuid": "platform_customization_hosted",
         "applicationIcon": "https://openfin.github.io/golden-prototype/favicon.ico",
         "autoShow": false,
-        "providerUrl": "https://openfin.github.io/platform-api-project-seed/provider.html",
+        "providerUrl": "https://ricardo-martini-openfin.github.io/Target-Blank-Default/provider.html",
         "permissions": {
             "ExternalWindow": {
               	"wrap": true
@@ -26,7 +26,7 @@
             }
         },
         "defaultWindowOptions": {
-            "url": "https://openfin.github.io/platform-api-project-seed/platform-window.html",
+            "url": "https://ricardo-martini-openfin.github.io/Target-Blank-Default/platform-window.html",
             "contextMenu": true,
             "defaultWidth": 600,
             "defaultHeight": 600,
